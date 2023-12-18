@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket.io Chat</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js" integrity="sha384-mZLF4UVrpi/QTWPA7BjNPEnkIfRFn4ZEO3Qt/HFklTJBj/gBOV8G3HcKn4NfQblz" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div id="chat-container">
+        <div id="sidebar">
+            <h1>Chat Mensajes</h1>
+            <label for="identificacion">Tu Identificación:</label>
+            <input type="text" id="identificacion">
+            <button onclick="conectar()">Conectar</button>
+            <select id="usuarioSelecionado" disabled>
+                <!-- Opciones se añadirán dinámicamente aquí -->
+            </select>
+            <div id="listaUsuarios"></div>
+        </div>
+        <div id="main">
+            <div id="mensajes"></div>
+            <div id="input-container">
+                <input type="text" id="inputMensaje" placeholder="Escribe tu mensaje">
+                <button id="enviarPublico" onclick="enviarPublico()">Publico</button>
+                <button id="enviarPrivado" onclick="enviarPrivado()">Privado</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
