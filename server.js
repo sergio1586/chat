@@ -47,6 +47,7 @@ socket.on('privado', function (data) {
         */
         //envia el privado indincado a quien, el nombre del remite y el mensaje
         io.to(socketDestino.id).emit('privado', { nombre, mensaje: data.mensaje });
+        io.to(idUsuario).emit('privado',{nombre,mensaje:data.mensaje});
     }
 });
 //muestra cuando un usuario se desconecta, lo borra del array u muestra la lista actualizada
