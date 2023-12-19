@@ -39,6 +39,7 @@ $(document).ready(() => {
             $('#mensajes').append(mensajebloqueo);
         }else{//si las palabras no son bloqueadas muestra el mensaje publico inidcando el nombre
             $('#mensajes').append(`<p><strong>${data.nombre}:</strong> ${data.mensaje}</p>`);
+
         }
         
     });
@@ -56,6 +57,8 @@ $(document).ready(() => {
                 'padding':'5px'
             });
             $('#mensajes').append(privado);//añado a mensajes
+
+            mostrarNotificacion()
         } 
     });
     
@@ -108,5 +111,17 @@ $(document).ready(() => {
         'marica'
         // Agrega más palabras según tus necesidades
     ];
+    function mostrarNotificacion() {
+        // Puedes utilizar la API de Notificaciones del navegador
+        if (Notification.permission === 'granted') {
+            new Notification('Nuevo mensaje');
+        } else if (Notification.permission !== 'denied') {
+            Notification.requestPermission().then((permission) => {
+            if (permission === 'granted') {
+                new Notification('Nuevo mensaje');
+            }
+        });
+        }
+    }
 
 });
