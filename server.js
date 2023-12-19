@@ -46,8 +46,8 @@ socket.on('privado', function (data) {
             socket tiene un campo id que contiene la clave
         */
         //envia el privado indincado a quien, el nombre del remite y el mensaje
-        io.to(socketDestino.id).emit('privado', { nombre, mensaje: data.mensaje });
-        io.to(idUsuario).emit('privado',{nombre,mensaje:data.mensaje});
+        io.to(socketDestino.id).emit('privado', { nombre, mensaje: data.mensaje });//esta es para el que recibe
+        io.to(idUsuario).emit('privado',{nombre,mensaje:data.mensaje});//esto es el que envia
     }
 });
 //muestra cuando un usuario se desconecta, lo borra del array u muestra la lista actualizada
@@ -68,7 +68,6 @@ function enviarListaUsuarios() {
             nombreUsuario: usuarios[id].usuarioElegido
         };
     });
-
         //envia la lista estructurada al cliente
     io.emit('listaUsuarios', listaUsuarios);
 }

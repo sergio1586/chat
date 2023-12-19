@@ -1,3 +1,4 @@
+/* Estilos generales que se aplicarán a todas las pantallas */
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
@@ -95,15 +96,40 @@ select {
     color: #333;
 }
 
-  /* Estilo para las opciones <option> */
+/* Estilo para las opciones <option> */
 option {
     font-size: 14px;
     background-color: #fff;
     color: #333;
 }
 
-  /* Estilo para destacar la opción seleccionada */
+/* Estilo para destacar la opción seleccionada */
 option:checked {
     background-color: #007BFF;
     color: #fff;
+}
+
+/* Estilos específicos para pantallas más pequeñas (dispositivos móviles) */
+@media only screen and (max-width: 600px) {
+    #chat-container {
+        flex-direction: column;
+    }
+
+    #sidebar {
+        width: 100%;
+    }
+
+    #main {
+        width: 100%;
+    }
+
+    #input-container {
+        flex-direction: column;
+    }
+
+    #enviarPublico,
+    #enviarPrivado {
+        width: 100%;
+        margin: 0;
+    }
 }
