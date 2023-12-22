@@ -113,6 +113,9 @@ option:checked {
 @media only screen and (max-width: 600px) {
     #chat-container {
         flex-direction: column;
+        margin: 0;
+        padding: 0;
+
     }
 
     #sidebar {
@@ -125,11 +128,20 @@ option:checked {
 
     #input-container {
         flex-direction: column;
+        
     }
 
     #enviarPublico,
     #enviarPrivado {
         width: 100%;
         margin: 0;
+        font-size: xx-large;
+    }
+    #inputMensaje {
+        width: 100%;
+        flex-grow: 1;
+        padding:8px;
+        box-sizing: border-box;
+        margin:0;
     }
 }
